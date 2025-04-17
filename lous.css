@@ -1,0 +1,104 @@
+:root {
+    --pink: pink;
+    --dark-pink: rgb(255, 124, 146);
+    --green: green;
+    --light-green: rgb(1, 223, 1);
+    --red: rgb(250, 67, 67);
+    --blue: blue;
+    --brown: brown;
+}
+
+body {
+    background: linear-gradient(90deg, var(--pink), var(--dark-pink));
+    color: var(--brown);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.25rem;
+    font-weight: 100;
+    margin-bottom: 1.5rem;
+}
+
+div {
+    border: 5px solid var(--blue);
+    line-height: 1.6;
+    width: 500px;
+    height: 400px;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(rgb(240, 201, 201) , rgb(247, 172, 172));
+}
+
+.div {
+    transition: all 0.5s ease;
+    animation: fadein 1s ease-in-out;
+}
+
+.div:hover {
+    transform: scale(1.05);
+}
+
+.ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.button {
+    width: 120px;
+    height: 50px;
+    text-decoration: none;
+    background: linear-gradient(-90deg, var(--green), var(--light-green));
+    font-size: 1.1rem;
+    color: var(--red);
+    transition: all 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Fixed shadow values (no '10') */
+}
+
+.image {
+    transition: all 0.3 ease;
+    animation: fedein 1s ease-in-out;
+    width: 200px;
+    height: 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Fixed shadow values (no '10') */
+}
+
+.image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Fixed shadow values (no '10') */
+}
+
+.button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, var(--green), var(--light-green));
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Fixed shadow values (no '10') */
+    color: white; /* Better contrast on hover */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
