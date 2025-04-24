@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+    <head>
+        <meta charset="tw">
+    </head>
+    <style>
+        body {
+            background: linear-gradient(90deg pink rgb(252, 59, 91));
+            text-align: center;
+            color: rgb(255, 13, 13);
+        }
+        div {
+            border: none;
+            border: 5px solid beige;
+            border-radius: 5px;
+            width: 400px;
+            height: 5px;
+        }
+        .container {
+            background: beige;
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 2fr 14fr;
+            gap: 10px;
+        }
+        .grid {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        #container {
+            background: beige;
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 2fr;
+            gap: 10px;
+        }
+        .item {
+            background: cyan;
+            padding: 10px;
+        }
+        .button {
+            transition: all 1s ease;
+            animation: fadein 1s ease-in-out;
+            box-shadow: 0px 5px 10px #000;
+            width: 200px;
+            height: 200px;
+        }
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 10px #000;
+        }
+        #button {
+            transition: all 1s ease;
+            animation: fadein 1s ease-in-out;
+            box-shadow: 0px 5px 10px #000;
+            width: 610px;
+            height: 610px;
+        }
+        #button:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 10px #000;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <img src="tiger_tile_1.png" class="button">
+            <img src="tiger_tile_2.png" class="button">
+            <img src="tiger_tile_3.png" class="button">
+            <img src="tiger_tile_4.png" class="button">
+            <img src="tiger_tile_5.png" class="button">
+            <img src="tiger_tile_6.png" class="button">
+            <img src="tiger_tile_7.png" class="button">
+            <img src="tiger_tile_8.png" class="button">
+            <img src="tiger_tile_9.png" class="button">
+        </div>
+        <img src="21e16f45-c930-4222-8b35-12e68f1009d6.webp" id="button">
+    </body>
+</html>
