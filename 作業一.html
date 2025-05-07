@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-t">
+    <head>
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        .list {
+            display: flex;
+            max-width: 1200px;
+            background: yellowgreen;
+        }
+        .item {
+            background: linear-gradient(90deg ,blue ,rgb(100, 100, 255));
+            margin: 10px;
+            flex: none;
+            width: 140px;
+        }
+        .headline {
+            font-size: 45px;
+            margin: 10PX;
+            font-family: "zcool qingke huangyou";
+        }
+        .imger {
+            transition: all 0.5s ease;
+            animation: fadeln 1s ease-in-out;
+            width: 280px;
+            margin: 10px;
+        }
+        .imger:hover {
+            transform: scale(1.05);
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: gray;
+            margin: 10PX;
+        }
+        .topnav a {
+            background: rgb(59, 59, 59);
+            color: white;
+            float: left;
+            padding: 17px 20px;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+        }
+        .topnav a:hover {
+            text-decoration-line: underline;
+            background: rgb(112, 112, 112);
+            color: black;
+        }
+        @media only screen and (max-width:1250px) {
+            .list {
+                flex-wrap: wrap;
+            }
+            .item {
+                width: 50%;
+            }
+        } 
+        @media only screen and (max-width:950px){
+            .headline {font-family: "標楷體";}
+            .item { width: 95%;}
+        }
+        </style>
+        <div class="headline">反應式網站</div>
+        <div class="topnav">
+        <a href="https://www.youtube.com/">youtube</a>
+        </div>
+        <div>
+        <div class="list">
+        <div class="item">作業1</div>
+        <div class="item">作業2</div>
+        <div class="item">作業3</div>
+        <div class="item">作業4</div>
+    </div>
+    <br>
+    <div class="list">
+    <img src="https://louis01445.github.io/Html-Research/tiger_tile_1.png" class="imger">
+    <img src="https://louis01445.github.io/Html-Research/tiger_tile_2.png" class="imger">
+    <img src="https://louis01445.github.io/Html-Research/tiger_tile_3.png" class="imger">
+    <img src="https://louis01445.github.io/Html-Research/tiger_tile_4.png" class="imger">
+    </div>
+    </div>
+</html>
