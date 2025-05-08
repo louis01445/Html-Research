@@ -1,108 +1,219 @@
 <!DOCTYPE html>
-<html lang="zh-t">
-    <head>
-        <meta charset="utf-8">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-    </head>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>響應式網站</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
     <style>
-        .list {
-            display: flex;
-            max-width: 1500px;
-            background: yellowgreen;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .item {
-            background: linear-gradient(90deg ,blue ,rgb(100, 100, 255));
-            margin: 10px;
-            flex: none;
-            width: 280px;
-        }
-        p {
-            margin: 10px;
-            color: black;
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
         }
         
         .headline {
             font-size: 45px;
-            margin: 10PX;
-            font-family: "zcool qingke huangyou";
+            margin: 10px;
+            font-family: "ZCOOL QingKe HuangYou";
         }
-        .desktop-meun {
-            text-align: center;
-            display: block;
-        }
-        .mobil-meun {
-            text-align: center;
+        
+        /* 漢堡菜單樣式 */
+        .hamburger {
             display: none;
-        }
-        .imger {
-            transition: all 0.5s ease;
-            animation: fadeln 1s ease-in-out;
-            width: 280px;
+            cursor: pointer;
+            padding: 10px;
+            background: yellowgreen;
             margin: 10px;
         }
-        .imger:hover {
-            transform: scale(1.05);
+        
+        .hamburger span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: black;
+            margin: 5px 0;
+            transition: all 0.3s ease;
         }
+        
+        .menu-container {
+            display: flex;
+            background: yellowgreen;
+            max-width: 1500px;
+            flex-wrap: wrap;
+        }
+        
+        .menu-item {
+            margin: 10px;
+            width: 280px;
+            color: black;
+        }
+        
         .topnav {
             overflow: hidden;
             background-color: gray;
-            margin: 10PX;
+            margin: 10px;
         }
+        
         .topnav a {
+            display: block;
             background: rgb(59, 59, 59);
             color: white;
             float: left;
             padding: 17px 20px;
             text-decoration: none;
             text-align: center;
-            color: white;
         }
+        
         .topnav a:hover {
-            text-decoration-line: underline;
+            text-decoration: underline;
             background: rgb(112, 112, 112);
             color: black;
         }
-        @media only screen and (max-width:1250px) {
-            .list {
-                flex-wrap: wrap;
-            }
-            .item {
-                width: 50%;
-            }
-        } 
-        @media only screen and (max-width:950px){
-            .headline {font-family: "標楷體";}
-            .item { width: 95%;}
-
+        
+        .content-list {
+            display: flex;
+            max-width: 1500px;
+            background: yellowgreen;
+            flex-wrap: wrap;
         }
-        </style>
-        <div class="headline">反應式網站</div>
-        <div class="list">
-        <p>選項1</p> <p>選項2</p> <p>選項3</p> <p>選項4</p> <p>選項5</p> <p>選項6</p>
-        </div>
-        <div class="topnav">
-        <a href="https://www.youtube.com/">youtube</a>
-        </div>
-        <div>
-        <div class="list">
-        <div class="item">作業1</div>
-        <div class="item">作業2</div>
-        <div class="item">作業3</div>
-        <div class="item">紙飛機</div>
-        <div class="item">影片</div>
+        
+        .content-item {
+            background: linear-gradient(90deg, blue, rgb(100, 100, 255));
+            margin: 10px;
+            width: 280px;
+            padding: 10px;
+            color: white;
+        }
+        
+        .media-container {
+            display: flex;
+            max-width: 1500px;
+            flex-wrap: wrap;
+        }
+        
+        .media-item {
+            transition: all 0.5s ease;
+            animation: fadeIn 1s ease-in-out;
+            width: 280px;
+            margin: 10px;
+        }
+        
+        .media-item:hover {
+            transform: scale(1.05);
+        }
+        
+        video {
+            width: 280px;
+            margin: 10px;
+        }
+        
+        @media only screen and (max-width:1250px) {
+            .content-item, .media-item, video {
+                width: calc(50% - 20px);
+            }
+        }
+        
+        @media only screen and (max-width:950px) {
+            .headline {
+                font-family: "標楷體";
+            }
+            
+            .content-item, .media-item, video {
+                width: calc(100% - 20px);
+            }
+            
+            /* 漢堡菜單在小屏幕上顯示 */
+            .hamburger {
+                display: block;
+            }
+            
+            /* 隱藏常規菜單 */
+            .menu-container {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            /* 當漢堡菜單激活時顯示 */
+            .menu-container.active {
+                display: flex;
+            }
+            
+            /* 調整菜單項寬度 */
+            .menu-item {
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="headline">響應式網站</h1>
+    
+    <!-- 漢堡菜單按鈕 -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
+    
+    <!-- 主菜單 -->
+    <div class="menu-container" id="menuContainer">
+        <div class="menu-item">選項1</div>
+        <div class="menu-item">選項2</div>
+        <div class="menu-item">選項3</div>
+        <div class="menu-item">選項4</div>
+        <div class="menu-item">選項5</div>
+        <div class="menu-item">選項6</div>
+    </div>
+    
+    <div class="topnav">
+        <a href="https://www.youtube.com/">YouTube</a>
+    </div>
+    
+    <div class="content-list">
+        <div class="content-item">作業1</div>
+        <div class="content-item">作業2</div>
+        <div class="content-item">作業3</div>
+        <div class="content-item">紙飛機</div>
+        <div class="content-item">影片</div>
+    </div>
+    
     <br>
-    <div class="list">
-    <img src="https://louis01445.github.io/ffgghh/image.png" class="imger">
-    <img src="https://louis01445.github.io/web2/image.png" class="imger">
-    <img src="https://louis01445.github.io/-/image.png" class="imger">
-    <img src="https://louis01445.github.io/Html-Research/image.png" class="imger">
-    <video controls width="280px">
-        <source src="https://louis01445.github.io/-/20250507_103447.mp4" class="image">
-        bro is my video
-    </video>
+    
+    <div class="media-container">
+        <img src="https://louis01445.github.io/ffgghh/image.png" class="media-item">
+        <img src="https://louis01445.github.io/web2/image.png" class="media-item">
+        <img src="https://louis01445.github.io/rrttyy/image.png" class="media-item">
+        <img src="https://louis01445.github.io/Html-Research/image.png" class="media-item">
+        <video controls>
+            <source src="https://louis01445.github.io/-/20250507_103447.mp4">
+            您的瀏覽器不支持視頻播放
+        </video>
     </div>
-    </div>
+    <script>
+        // 漢堡菜單功能
+        const hamburger = document.getElementById('hamburger');
+        const menuContainer = document.getElementById('menuContainer');
+        
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            menuContainer.classList.toggle('active');
+        });
+    </script>
+</body>
 </html>
