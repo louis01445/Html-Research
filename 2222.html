@@ -46,7 +46,8 @@
         while(true) {
         x=prompt("請輸入0~80年齡", "");
             if(!isNaN(x) && x.trim() !== "" && x >= 0 && x <= 80) {
-                x = parseInt(x); 
+                x = parseInt(x);
+                break; 
             } else {
                 alert("請輸入有效的數字(0~80)");
                 
