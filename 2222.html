@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-tw">
     <head>
@@ -41,32 +40,28 @@
         <a href="4444.html">4</a>
     </div>
     <script>
-        let man = new Object()
-        var x;
-        while(true) {
-        x=prompt("請輸入0~80年齡", "");
-            if(!isNaN(x) && x.trim() !== "" && x >= 0 && x <= 80) {
-                x = parseInt(x);
-                break; 
-            } else {
-                alert("請輸入有效的數字(0~80)");
-                
-            }
-        }
-        if(x !== null) {
-            man.name = "小鳳";
-            man.talk = function() {
-                console.log("hello 我是", this.name, "年齡", x);
-            };
-            
-            document.write("hello 我是", man.name, "<BR>", "年齡", x);
-            
-            if(x >= 20) {
-                document.write(" 成年!");
-            } else {
-                document.write(" 未成年!");
-            }
-            man.talk();
-        }
+       let grades = [10, '<br>', 20, '<br>', 30, '<br>'];
+grades.push(40, '<br>');
+grades.push(50, '<br>');
+
+console.log(grades.length);
+
+let sum = 0;
+let count = 0;
+
+for (let i = 0; i < grades.length; i++) {
+    document.write(grades[i]);
+    if (typeof grades[i] === "number") {
+        sum += grades[i];
+        count++;
+    }
+}
+
+let gh = count > 0 ? sum / count : 0;
+
+document.write('<br>總和: ' + sum);
+document.write('<br>數字個數: ' + count);
+document.write('<br>平均: ' + gh.toFixed(2));
+
     </script>
 </html>
