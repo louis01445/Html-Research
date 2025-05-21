@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        body {
+            background: linear-gradient(90deg red rgb(255, 113, 113));
+            font-family: "標楷體";
+            font-size: 40px;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: rgb(160, 160, 160);
+        }
+        .topnav a {
+            float: left;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            padding: 16px 20px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .topnav a:hover {
+            background-color: rgb(160, 160, 160);
+            color: red;
+            text-decoration-line: underline;
+            text-decoration-color: red;
+        }
+        .topnav a.active {
+            background-color: rgb(0, 255, 0);
+            color: yellow;
+        }
+        </style>
+        <div class="topnav">
+            <a href="1111.html">1</a>
+            <a href="2222.html">2</a>
+            <a href="3333.html">3</a>
+            <a href="4444.html">4</a>
+        </div>
+        <script>
+    let grades = [11, "<br>", 45, "<br>", 13, "<br>"];
+    grades.push(30, "<br>");
+    grades.push(60, "<br>");
+    console.log(grades.length);
+    
+    let sum = 0; // 初始化總和為0
+    let count = 0; // 初始化數字個數為0
+    
+    for (i = 0; i < grades.length; i++) {
+        // 輸出原始陣列元素
+        document.write(grades[i]);
+        
+        // 如果是數字，則加到總和中並增加計數
+        if (typeof grades[i] === 'number') {
+            sum += grades[i];
+            count++;
+        }
+    }
+    
+    // 計算平均值（避免除以零的情況）
+    let average = count > 0 ? sum / count : 0;
+    
+    // 輸出結果
+    document.write("<br>總和: " + sum);
+    document.write("<br>數字個數: " + count);
+    document.write("<br>平均: " + average.toFixed(2)); // 保留兩位小數
+        </script>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        body {
+            background: linear-gradient(90deg red rgb(255, 113, 113));
+            font-family: "標楷體";
+            font-size: 40px;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: rgb(160, 160, 160);
+        }
+        .topnav a {
+            float: left;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            padding: 16px 20px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .topnav a:hover {
+            background-color: rgb(160, 160, 160);
+            color: red;
+            text-decoration-line: underline;
+            text-decoration-color: red;
+        }
+        .topnav a.active {
+            background-color: rgb(0, 255, 0);
+            color: yellow;
+        }
+        </style>
+        <div class="topnav">
+        <a href="1111.html">1</a>
+        <a href="2222.html">2</a>
+        <a href="3333.html">3</a>
+        <a href="4444.html">4</a>
+    </div>
+    <script>
+        let man = new Object();
+        
+        // 輸入驗證循環
+        var x;
+        while(true) {
+            x = prompt("請輸入年齡（0~80歲）", "");
+            
+            // 檢查是否取消輸入
+            if(x === null) {
+                document.write("您取消了輸入");
+                break;
+            }
+            
+            // 檢查是否為數字且在0~80之間
+            if(!isNaN(x) && x.trim() !== "" && x >= 0 && x <= 80) {
+                x = parseInt(x); // 轉換為數字
+                break;
+            } else {
+                alert("請輸入有效的數字（0~80）！");
+            }
+        }
+        
+        // 如果用戶沒有取消輸入
+        if(x !== null) {
+            man.name = "小鳳";
+            man.talk = function() {
+                console.log("hello 我是", this.name, "年齡", x);
+            };
+            
+            document.write("hello 我是", man.name, "<BR>", "年齡", x);
+            
+            if(x >= 20) {
+                document.write(" 成年!");
+            } else {
+                document.write(" 未成年!");
+            }
+            
+            // 呼叫talk方法
+            man.talk();
+        }
+    </script>
+</html>
