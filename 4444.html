@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
-    <head>
-        <meta charset="utf-8">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>成績表</title>
     <style>
         body {
-            background: linear-gradient(90deg red rgb(255, 113, 113));
+            background: linear-gradient(90deg, red, rgb(255, 113, 113));
             font-family: "標楷體";
             font-size: 40px;
         }
@@ -32,15 +32,62 @@
             background-color: rgb(0, 255, 0);
             color: yellow;
         }
-        </style>
-        <div class="topnav">
-            <a href="1111.html">1</a>
-            <a href="2222.html">2</a>
-            <a href="3333.html">3</a>
-            <a href="4444.html">4</a>
-        </div>
-        <script>
-            let sv=["姓名","國文",'英文',"數學","王大同","林麥可","張淑芬"]
-            document.write('<table border="1">',);
-                document.write()
-        </script>
+    </style>
+</head>
+<body>
+
+<div class="topnav">
+    <a href="1111.html">1</a>
+    <a href="2222.html">2</a>
+    <a href="3333.html">3</a>
+    <a href="4444.html">4</a>
+</div>
+
+<script>
+    // 使用者輸入分數
+    var x = prompt("請輸入 王大同 的 國文分數 (0~100):", "");
+    var c = prompt("請輸入 王大同 的 英文分數 (0~100):", "");
+    var v = prompt("請輸入 王大同 的 數學分數 (0~100):", "");
+    var b = prompt("請輸入 林麥可 的 國文分數 (0~100):", "");
+    var n = prompt("請輸入 林麥可 的 英文分數 (0~100):", "");
+    var m = prompt("請輸入 林麥可 的 數學分數 (0~100):", "");
+    var a = prompt("請輸入 張淑芬 的 國文分數 (0~100):", "");
+    var s = prompt("請輸入 張淑芬 的 英文分數 (0~100):", "");
+    var d = prompt("請輸入 張淑芬 的 數學分數 (0~100):", "");
+
+    // 驗證是否所有輸入都合法
+    if (
+        !isNaN(x) && x.trim() !== "" && x >= 0 && x <= 100 &&
+        !isNaN(c) && c.trim() !== "" && c >= 0 && c <= 100 &&
+        !isNaN(v) && v.trim() !== "" && v >= 0 && v <= 100 &&
+        !isNaN(b) && v.trim() !== "" && b >= 0 && b <= 100 &&
+        !isNaN(n) && n.trim() !== "" && n >= 0 && n <= 100 &&
+        !isNaN(m) && m.trim() !== "" && m >= 0 && m <= 100 &&
+        !isNaN(a) && m.trim() !== "" && a >= 0 && a <= 100 &&
+        !isNaN(s) && m.trim() !== "" && s >= 0 && s <= 100 &&
+        !isNaN(d) && m.trim() !== "" && d >= 0 && d <= 100 
+    ) {
+        x = parseInt(x);
+        c = parseInt(c);
+        v = parseInt(v);
+        b = parseInt(b);
+        n = parseInt(n);
+        m = parseInt(m);
+        a = parseInt(a);
+        s = parseInt(s);
+        d = parseInt(d);
+        
+        // 顯示表格
+        document.write('<table border="1">');
+        document.write('<tr><td>姓名</td><td>國文</td><td>英文</td><td>數學</td></tr>');
+        document.write('<tr><td>王大同</td><td>' + x + '</td><td>' + c + '</td><td>' + v + '</td></tr>');
+        document.write('<tr><td>林麥可</td><td>' + b + '</td><td>' + n + '</td><td>' + m + '</td></tr>');
+        document.write('<tr><td>張淑芬</td><td>' + a + '</td><td>' + s + '</td><td>' + d + '</td></tr>');
+        document.write('</table>');
+    } else {
+        alert("請輸入有效的數字 (0~100)");
+    }
+</script>
+
+</body>
+</html>
