@@ -42,16 +42,17 @@
     </div>
     <script>
         let man = new Object()
+        var x;
         while(true) {
-        var x=prompt("請輸入0~80年齡", "");
-        }
+        x=prompt("請輸入0~80年齡", "");
             if(!isNaN(x) && x.trim() !== "" && x >= 0 && x <= 80) {
-                x = parseInt(x); 
+                x = parseInt(x);
+                break; 
             } else {
                 alert("請輸入有效的數字(0~80)");
                 
             }
-        
+        }
         if(x !== null) {
             man.name = "小鳳";
             man.talk = function() {
@@ -65,9 +66,6 @@
             } else {
                 document.write(" 未成年!");
             }
-            
-            50
-
             man.talk();
         }
     </script>
