@@ -40,15 +40,15 @@
         <a href="4444.html">4</a>
     </div>
     <script>
-        let man = new Object();
+        let man = new Object()
             // 檢查是否為數字且在0~80之間
+        var x=prompt("請輸入0~80年齡","")
             if(!isNaN(x) && x.trim() !== "" && x >= 0 && x <= 80) {
                 x = parseInt(x); // 轉換為數字
                 break;
             } else {
                 alert("請輸入有效的數字（0~80）！");
             }
-        }
         
         // 如果用戶沒有取消輸入
         if(x !== null) {
