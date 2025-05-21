@@ -41,18 +41,6 @@
     </div>
     <script>
         let man = new Object();
-        
-        // 輸入驗證循環
-        var x;
-        while(true) {
-            x = prompt("請輸入年齡（0~80歲）", "");
-            
-            // 檢查是否取消輸入
-            if(x === null) {
-                document.write("您取消了輸入");
-                break;
-            }
-            
             // 檢查是否為數字且在0~80之間
             if(!isNaN(x) && x.trim() !== "" && x >= 0 && x <= 80) {
                 x = parseInt(x); // 轉換為數字
